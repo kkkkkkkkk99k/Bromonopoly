@@ -27,7 +27,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .green{background:linear-gradient(180deg,#5fe3b2,#34d399);border:none;color:#062016}
 .ghost{background:#1b2437}
 .pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px dashed #2a3849;font-size:16px;color:#c9d3e7}
-.tag{font-size:11px;color:#9fb0c7;background:#1a2236;border:1px solid #2a3849;border-radius:999px;padding:4px 8px}
+.tag{font-size:18px;color:#9fb0c7;background:#1a2236;border:1px solid #2a3849;border-radius:999px;padding:4px 8px}
 .pool{display:grid;grid-template-columns:1fr;gap:6px;max-height:170px;overflow:auto;padding:8px;border:1px solid #223046;border-radius:12px;background:#101827}
 .pool label{display:flex;align-items:center;gap:8px;font-size:14px}
 .pool input{accent-color:#60a5fa}
@@ -39,3 +39,4 @@ button:disabled{opacity:.45;cursor:not-allowed}
   .wrap{grid-template-columns:1fr}
   .board{width:100%}
 }
+
