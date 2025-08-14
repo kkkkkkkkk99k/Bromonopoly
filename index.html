@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>小懲罰大富翁</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <!-- 左：設定 / 控制 -->
+    <div class="card" id="setupCard">
+      <h1>哥哥弟弟大富翁</h1>
+      <div class="hint">開局前請各自幫對方勾選球池內容。開始遊戲後即可輪流擲骰並抽任務；完成任務才能前進。</div>
+      <h2>優勝者將可以獲得大秘寶!!!</h2>
+
+      <h2>弟弟的懲罰</h2>
+      <div class="grid cols-2">
+        <div>
+          <div class="hint">勾選「教訓道具」</div>
+          <div class="pool" id="broTools"></div>
+        </div>
+        <div>
+          <div class="hint">勾選「懲罰數量」</div>
+          <div class="pool" id="broCounts"></div>
+        </div>
+      </div>
+
+      <h2>哥哥的愛護</h2>
+      <div class="grid cols-2">
+        <div>
+          <div class="hint">勾選「互動行為」</div>
+          <div class="pool" id="sisActs"></div>
+        </div>
+        <div>
+          <div class="hint">勾選「親密部位」</div>
+          <div class="pool" id="sisParts"></div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:10px">
+        <button class="green" id="startBtn">開始遊戲</button>
+        <span class="hint">開始後仍可在暫停時調整設定。</span>
+      </div>
+    </div>
+
+    <!-- 右：棋盤 + 控制 -->
+    <div class="card">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <div class="row">
+          <span class="pill"><span class="dot pA"></span> 哥哥</span>
+          <span class="pill"><span class="dot pB"></span> 弟弟</span>
+        </div>
+        <div class="row">
+          <button class="ghost" id="pauseBtn">暫停/設定</button>
+          <button class="ghost" id="resetBtn">重置</button>
+        </div>
+      </div>
+
+      <div class="board" id="board"></div>
+
+      <div class="grid cols-2" style="margin-top:12px">
+        <div class="card" style="background:#0f1626">
+          <h2>回合控制</h2>
+          <div class="row" style="margin:6px 0 8px">
+            <div class="pill">目前：<b id="turnName">哥哥</b></div>
+            <div class="pill">骰子：<b id="diceVal">—</b></div>
+          </div>
+          <div class="row">
+            <button class="blue" id="rollA">哥哥擲骰 🎲</button>
+            <button class="pink" id="rollB">弟弟擲骰 🎲</button>
+            <button id="doneBtn" disabled>完成任務 ✅</button>
+            <button id="failBtn" disabled>任務失敗 ❌</button>
+          </div>
+          <div class="task" id="taskBox">等待擲骰…</div>
+        </div>
+        <div>
+          <h2 style="margin-top:0">事件紀錄</h2>
+          <div class="log" id="log"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 勝利寶箱 -->
+  <div class="modal" id="chestModal">
+    <div class="box">
+      <h2>🎁 懲罰寶箱(輸家乖乖受罰吧！)</h2>
+      <div id="chestContent" class="grid"></div>
+      <div class="row" style="margin-top:10px;justify-content:flex-end">
+        <button class="green" id="closeChest">要上訴就點右上角"重置"</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
